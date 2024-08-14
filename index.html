@@ -1,0 +1,203 @@
+---
+layout: default
+---
+
+<header class="site-header" id="topo">
+  <div class="wrapper">
+    <div class="site-title">
+      <img src="{{ site.baseurl }}/img/logo-mhs.png" alt="{{ site.title }}" />
+    </div>
+
+    <nav class="site-nav">
+      <button
+        class="menu-icon"
+        aria-controls="main-menu"
+        aria-expanded="false"
+        aria-label="Menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div id="main-menu" class="trigger">
+        <a class="page-link" href="#hero">Início</a>
+        <a class="page-link" href="#servicos">Serviços</a>
+        <a class="page-link" href="#sobre-nos">Sobre nós</a>
+        <a class="page-link" href="#porque-escolher">Porque Escolher</a>
+        <a class="page-link" href="#principais-clientes">Principais Clientes</a>
+        <a class="page-link" href="#contato">Contato</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="section-hero" id="hero">
+  <div class="wrapper">
+    <h1>MHS AIR GROUP</h1>
+    <p>Especialistas em Ar Condicionado</p>
+    <p>DAIKIN FUJITSU LG MIDEA SAMSUNG</p>
+    <p><a href="#contato" class="btn">Contato</a></p>
+  </div>
+</section>
+
+<section class="section-servicos" id="servicos">
+  <div class="wrapper">
+    <h2>Nossos Serviços</h2>
+    <ul>
+      <li>
+        <strong>Instalação Residencial e Comercial</strong><br />Todas as
+        capacidades.
+      </li>
+      <li>
+        <strong>Sistemas VRF e VRV</strong><br />Instalação completa e
+        manutenção.
+      </li>
+      <li>
+        <strong>Chiller e Splitão</strong><br />Soluções industriais e
+        comerciais.
+      </li>
+      <li>
+        <strong>Manutenção Preventiva e Corretiva</strong><br />Garantia de
+        performance e longevidade.
+      </li>
+      <li>
+        <strong>Vendas de Ar Condicionado</strong><br />Multimarcas: Daikin,
+        Fujitsu, LG, Midea, Samsung.
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section-sobre-nos" id="sobre-nos">
+  <div class="wrapper">
+    <h2>Propósito</h2>
+    <p>
+      Proporcionar qualidade de vida através da refrigeração, trazendo conforto
+      para todos.
+    </p>
+    <h2>Visão</h2>
+    <p>
+      Ser a empresa mais influente em serviços de ar condicionado no Brasil.
+    </p>
+    <h2>Valores</h2>
+    <ul>
+      <li>Caráter acima de capacitação</li>
+      <li>Crescimento e evolução em conjunto</li>
+      <li>Compromisso e honestidade</li>
+      <li>Qualidade junto à ética</li>
+      <li>Ser bom para nós quando for bom para o cliente</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section-porque-escolher" id="porque-escolher">
+  <div class="wrapper">
+    <h2>Por Que Escolher a MHS?</h2>
+    <ul>
+      <li>
+        <strong>Experiência e Expertise</strong><br />Anos de atuação no
+        mercado.
+      </li>
+      <li>
+        <strong>Equipe Qualificada</strong><br />Profissionais treinados e
+        certificados.
+      </li>
+      <li>
+        <strong>Compromisso com a Qualidade</strong><br />Foco em excelência e
+        satisfação do cliente.
+      </li>
+      <li>
+        <strong>Atendimento Personalizado</strong><br />Soluções sob medida para
+        cada necessidade.
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section-principais-clientes" id="principais-clientes">
+  <div class="wrapper">
+    <h2>Principais Clientes</h2>
+    <ul>
+      <li>IDS</li>
+      <li>JEEP</li>
+      <li>FIAT</li>
+      <li>AMERICAN SHOES</li>
+      <li>BIOLABOR</li>
+      <li>KOPENHAGEN</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section-contato" id="contato">
+  <div class="wrapper">
+    <h2>Fale conosco</h2>
+
+    <p>
+      <strong>Instagram:</strong>
+      <a href="https://instagram.com/{{site.instagram}}" target="_blank"
+        >@mhs.airgroup</a
+      >
+    </p>
+    <p>
+      <strong>WhatsApp:</strong>
+      <a href="https://wa.me/{{site.whatsapp.number}}" target="_blank"
+        >{{site.whatsapp.label}}</a
+      >
+    </p>
+    <p>
+      <strong>Telefone:</strong>
+      <a href="tel:+{{site.phone.number}}">{{site.phone.label}}</a>
+    </p>
+
+    <form action="" method="post">
+      <p>
+        <label for="nome">Nome</label>
+        <input
+          type="text"
+          name="nome"
+          placeholder="Informe seu nome"
+          required
+        />
+      </p>
+      <p>
+        <label for="email">E-mail</label>
+        <input
+          type="email"
+          name="email"
+          placeholder="seuemail@dominio.com"
+          required
+        />
+      </p>
+
+      <p>
+        <label for="assunto">Assunto</label>
+        <input
+          type="text"
+          name="assunto"
+          placeholder="Solicitação/orçamento/dúvida/etc"
+          required
+        />
+      </p>
+      <p>
+        <label for="mensagem">Mensagem</label>
+        <textarea
+          name="mensagem"
+          cols="30"
+          rows="5"
+          placeholder="Deixe sua mensagem..."
+        ></textarea>
+      </p>
+
+      <p class="honeypot">
+        <label for="honeypot"
+          >Se estiver vendo isto, deixe este campo vazio:
+        </label>
+        <input type="text" name="honeypot" />
+      </p>
+      <p>
+        <button type="submit">Enviar</button>
+      </p>
+    </form>
+  </div>
+</section>

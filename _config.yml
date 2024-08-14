@@ -1,0 +1,31 @@
+title: MHS Air Group
+timezone: America/Sao_Paulo
+defaults:
+- scope:
+    path: ''
+    type: pages
+  values:
+    layout: page
+- scope:
+    path: ''
+    type: posts
+  values:
+    layout: post
+lang: pt_BR
+description: >
+  Especialistas em Ar Condicionado.
+phone:
+  label: (15) 3213-9347
+  number: 551532139347
+whatsapp:
+  label: (15) 9 9670-5888
+  number: 551596705888
+instagram: mhs.airgroup
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://mhsairgroup.com" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+
+sass:
+  style: compressed

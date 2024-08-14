@@ -1,0 +1,30 @@
+$base-font-family : 'Jura', sans-serif;
+$base-font-size   : 16px;
+$base-font-weight : 400;
+$base-line-height : 1.5;
+
+$title-font-family: 'Orbitron', sans-serif;
+
+$small-font-size  : $base-font-size * 0.875;
+
+$spacing-unit     : 40px;
+
+$grey-color-light : #ddd;
+$grey-color       : #888;
+$grey-color-dark  : #222;
+
+$aqua             : #01d7df;
+$amarelo          : #fff312;
+
+$text-color       : $grey-color-light;
+$background-color : #000;
+$brand-color      : $amarelo;
+
+$content-width    : 1200px;
+
+$on-palm          : 600px;
+$on-laptop        : 800px;
+
+$header-height: 68px;
+$header-threshold: 22px;
+$header-color: $aqua;
