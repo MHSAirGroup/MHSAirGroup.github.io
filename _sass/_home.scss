@@ -1,0 +1,33 @@
+.section {
+  padding-top: $header-height * 2;
+  padding-bottom: $header-height;
+
+  &-hero {
+    &__title {
+      font-size: 3.4rem;
+    }
+
+    &__headline {
+      font-size: 2rem;
+    }
+
+    &__description {}
+
+    &__cta {
+      margin-top: $spacing-unit * 2;
+      margin-bottom: $spacing-unit * 2;
+      font-size: 1.5rem;
+    }
+  }
+
+  &-servicos {
+    background-color: rgba($color: #ccc, $alpha: 0.3);
+  }
+
+  &-sobre-nos {
+    background-color: rgba($color: $aqua, $alpha: 0.3);
+  }
+
+  &-contato {
+  }
+}

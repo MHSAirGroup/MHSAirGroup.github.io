@@ -1,0 +1,221 @@
+.site-header {
+  height: $header-height;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+
+  background-color: #000;
+
+  + * {
+    padding-top: $header-height * 2;
+    padding-bottom: $header-height;
+  }
+
+  @media (min-width: $on-palm) {
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 25% 70%, 20% 100%, 0 100%);
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: $header-threshold;
+      z-index: -1;
+      background-color: $header-color;
+      clip-path: polygon(
+        0 88%,
+        20% 88%,
+        25% 0,
+        100% 0,
+        100% 2px,
+        32% 2px,
+        21% 100%,
+        0 100%
+      );
+    }
+  }
+}
+
+.site-title {
+  float: left;
+  height: $header-height;
+  padding-right: $spacing-unit / 4;
+
+  img {
+    display: block;
+    margin-top: 8px;
+    width: auto;
+    height: $header-height - $header-threshold;
+    transition: 0.5s ease-in-out;
+    transform-origin: top left;
+  }
+}
+
+.site-nav {
+  float: right;
+
+  .page-link {
+    padding: 0 1em;
+    color: $header-color;
+    font-size: #{$small-font-size};
+    font-family: $title-font-family;
+    font-weight: 600;
+    line-height: #{$header-height - $header-threshold};
+    letter-spacing: 1px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: #000;
+      box-shadow: inset 0 0 0 2px #000, inset 0 0 0 3px $header-color;
+      outline: none;
+    }
+
+    @include media-greater($on-palm) {
+      display: inline-block;
+    }
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  @include media-query($on-palm) {
+    .menu-icon {
+      display: block;
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      padding: 10px 16px;
+      line-height: 1;
+
+      &:hover,
+      &:focus,
+      &:active {
+        box-shadow: none;
+        outline: none;
+      }
+
+      span {
+        margin-top: 4px;
+        margin-bottom: 4px;
+        padding: 2px;
+        width: 26px;
+        display: block;
+        background-color: currentcolor;
+
+        &:nth-child(1) {
+          transform: skewX(-20deg) translateX(3px);
+        }
+
+        &:nth-child(2) {
+          transform: skewX(-20deg);
+        }
+
+        &:nth-child(3) {
+          transform: skewX(-20deg) translateX(-3px);
+        }
+      }
+    }
+
+    .page-link {
+      margin: $spacing-unit / 4;
+      padding: 0.25em $spacing-unit / 2;
+      display: block;
+    }
+
+    .trigger {
+      display: none;
+      position: absolute;
+      top: 46px;
+      right: 16px;
+      text-align: center;
+      border: 1px solid $grey-color-light;
+      border-radius: 3px;
+      background-color: rgba(#000, 0.3);
+      backdrop-filter: blur(3px);
+
+      animation: menu-open 0.1s ease-in-out forwards;
+      transform-origin: top right;
+
+      @-webkit-keyframes menu-open {
+        0% {
+          transform: scale(0.5);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @keyframes menu-open {
+        0% {
+          -webkit-transform: scale(0.5);
+        }
+        100% {
+          -webkit-transform: scale(1);
+        }
+      }
+
+      > * {
+        animation: blink 0.15s ease-in-out forwards;
+      }
+
+      @for $i from 1 through 10 {
+        > :nth-child(#{$i}) {
+          animation-duration: 0.3s * $i;
+        }
+      }
+
+      @-webkit-keyframes blink {
+        0%,
+        25%,
+        60%,
+        75% {
+          opacity: 0;
+        }
+        12.5%,
+        50%,
+        70%,
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes blink {
+        0%,
+        25%,
+        60%,
+        75% {
+          opacity: 0;
+        }
+        12.5%,
+        50%,
+        70%,
+        100% {
+          opacity: 1;
+        }
+      }
+    }
+
+    &:hover .trigger {
+      display: block;
+    }
+  }
+}
+
+.site-footer {
+  padding-top: $spacing-unit;
+  padding-bottom: $spacing-unit;
+
+  .footer-heading {
+    font-size: 1.2em;
+
+    ul {
+      margin: 0;
+      list-style: none;
+    }
+  }
+}
