@@ -1,6 +1,6 @@
 .section {
   padding-top: $header-height * 2;
-  padding-bottom: $header-height;
+  padding-bottom: $header-height * 2;
 
   &-hero {
     &__title {
@@ -15,7 +15,6 @@
 
     &__cta {
       margin-top: $spacing-unit * 2;
-      margin-bottom: $spacing-unit * 2;
       font-size: 1.5rem;
     }
   }
