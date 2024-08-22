@@ -6,15 +6,38 @@
   right: 0;
   z-index: 9;
 
-  background-color: #000;
+  background-color: rgba(#000, 0.8);
+  backdrop-filter: blur(3px);
 
   + * {
     padding-top: $header-height * 2;
     padding-bottom: $header-height;
   }
 
-  @media (min-width: $on-palm) {
-    clip-path: polygon(0 0, 100% 0, 100% 70%, 25% 70%, 20% 100%, 0 100%);
+  $bevel-start: 260px;
+  $bevel-end: 285px;
+  $bevel-stroke-width: 1.5px;
+
+  @include media-greater($on-laptop) {
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% calc(100% - #{$header-threshold - $bevel-stroke-width}),
+      clamp(
+          #{$bevel-end},
+          calc((100vw - #{$content-width}) / 2 + #{$bevel-end}),
+          #{$content-width}
+        )
+        calc(100% - #{$header-threshold - $bevel-stroke-width}),
+      clamp(
+          #{$bevel-start},
+          calc((100vw - #{$content-width}) / 2 + #{$bevel-start}),
+          #{$content-width}
+        )
+        100%,
+      100% 100%,
+      0 100%
+    );
 
     &:after {
       content: '';
@@ -26,13 +49,33 @@
       z-index: -1;
       background-color: $header-color;
       clip-path: polygon(
-        0 88%,
-        20% 88%,
-        25% 0,
+        0 calc(100% - #{$bevel-stroke-width}),
+        clamp(
+            #{$bevel-start},
+            calc((100vw - #{$content-width}) / 2 + #{$bevel-start}),
+            #{$content-width}
+          )
+          calc(100% - #{$bevel-stroke-width}),
+        clamp(
+            #{$bevel-end},
+            calc((100vw - #{$content-width}) / 2 + #{$bevel-end}),
+            #{$content-width}
+          )
+          0,
         100% 0,
-        100% 2px,
-        32% 2px,
-        21% 100%,
+        100% #{$bevel-stroke-width},
+        clamp(
+            #{$bevel-end},
+            calc((100vw - #{$content-width}) / 2 + #{$bevel-end}),
+            #{$content-width}
+          )
+          #{$bevel-stroke-width},
+        clamp(
+            #{$bevel-start},
+            calc((100vw - #{$content-width}) / 2 + #{$bevel-start}),
+            #{$content-width}
+          )
+          100%,
         0 100%
       );
     }
@@ -40,17 +83,27 @@
 }
 
 .site-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
   float: left;
   height: $header-height;
   padding-right: $spacing-unit / 4;
 
-  img {
-    display: block;
-    margin-top: 8px;
-    width: auto;
-    height: $header-height - $header-threshold;
-    transition: 0.5s ease-in-out;
-    transform-origin: top left;
+  &__icon {
+    @extend .icon;
+
+    svg {
+      display: block;
+      width: auto;
+      height: $header-height - $header-threshold;
+      transition: 0.5s ease-in-out;
+      transform-origin: top left;
+    }
+  }
+
+  &__text {
+    font-size: 1.5em;
   }
 }
 
@@ -74,7 +127,7 @@
       outline: none;
     }
 
-    @include media-greater($on-palm) {
+    @include media-greater($on-laptop) {
       display: inline-block;
     }
   }
@@ -83,13 +136,13 @@
     display: none;
   }
 
-  @include media-query($on-palm) {
+  @include media-query($on-laptop) {
     .menu-icon {
       display: block;
       position: absolute;
       top: -1px;
       right: -1px;
-      padding: 10px 16px;
+      padding: 20px 20px;
       line-height: 1;
 
       &:hover,
@@ -123,19 +176,19 @@
 
     .page-link {
       margin: $spacing-unit / 4;
-      padding: 0.25em $spacing-unit / 2;
+      padding: 0.25em $spacing-unit;
       display: block;
     }
 
     .trigger {
       display: none;
       position: absolute;
-      top: 46px;
+      top: 62px;
       right: 16px;
       text-align: center;
-      border: 1px solid $grey-color-light;
+      border: 1px solid $aqua;
       border-radius: 3px;
-      background-color: rgba(#000, 0.3);
+      background-color: rgba(#000, 0.75);
       backdrop-filter: blur(3px);
 
       animation: menu-open 0.1s ease-in-out forwards;
@@ -200,7 +253,9 @@
       }
     }
 
-    &:hover .trigger {
+    &:hover .trigger,
+    &:focus .trigger,
+    &:focus-within .trigger {
       display: block;
     }
   }

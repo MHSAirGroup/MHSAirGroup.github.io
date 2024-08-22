@@ -1,7 +1,12 @@
 <header class="site-header">
   <div class="wrapper">
     <div class="site-title">
-      <img src="{{ site.baseurl }}/img/logo-mhs.png" alt="{{ site.title }}" />
+      <span class="site-title__icon">
+        {%- include svg/logo.svg -%}
+      </span>
+      <span class="site-title__text">
+        {{ site.title }}
+      </span>
     </div>
 
     <nav class="site-nav">
