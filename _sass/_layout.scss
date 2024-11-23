@@ -1,85 +1,8 @@
 .site-header {
   height: $header-height;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 9;
-
-  background-color: rgba(#000, 0.8);
-  backdrop-filter: blur(3px);
-
-  + * {
-    padding-top: $header-height * 2;
-    padding-bottom: $header-height;
-  }
-
-  $bevel-start: 260px;
-  $bevel-end: 285px;
-  $bevel-stroke-width: 1.5px;
-
-  @include media-greater($on-laptop) {
-    clip-path: polygon(
-      0 0,
-      100% 0,
-      100% calc(100% - #{$header-threshold - $bevel-stroke-width}),
-      clamp(
-          #{$bevel-end},
-          calc((100vw - #{$content-width}) / 2 + #{$bevel-end}),
-          #{$content-width}
-        )
-        calc(100% - #{$header-threshold - $bevel-stroke-width}),
-      clamp(
-          #{$bevel-start},
-          calc((100vw - #{$content-width}) / 2 + #{$bevel-start}),
-          #{$content-width}
-        )
-        100%,
-      100% 100%,
-      0 100%
-    );
-
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: $header-threshold;
-      z-index: -1;
-      background-color: $header-color;
-      clip-path: polygon(
-        0 calc(100% - #{$bevel-stroke-width}),
-        clamp(
-            #{$bevel-start},
-            calc((100vw - #{$content-width}) / 2 + #{$bevel-start}),
-            #{$content-width}
-          )
-          calc(100% - #{$bevel-stroke-width}),
-        clamp(
-            #{$bevel-end},
-            calc((100vw - #{$content-width}) / 2 + #{$bevel-end}),
-            #{$content-width}
-          )
-          0,
-        100% 0,
-        100% #{$bevel-stroke-width},
-        clamp(
-            #{$bevel-end},
-            calc((100vw - #{$content-width}) / 2 + #{$bevel-end}),
-            #{$content-width}
-          )
-          #{$bevel-stroke-width},
-        clamp(
-            #{$bevel-start},
-            calc((100vw - #{$content-width}) / 2 + #{$bevel-start}),
-            #{$content-width}
-          )
-          100%,
-        0 100%
-      );
-    }
-  }
+  line-height: $header-height;
+  background-color: $background-color;
+  box-shadow: 0 0 10px rgba(#000, 0.1);
 }
 
 .site-title {
@@ -111,10 +34,9 @@
   float: right;
 
   .page-link {
-    padding: 0 1em;
-    color: $header-color;
+    padding: 0 2em;
     font-size: #{$small-font-size};
-    font-family: $title-font-family;
+    font-family: $control-font-family;
     font-weight: 600;
     line-height: #{$header-height - $header-threshold};
     letter-spacing: 1px;
@@ -122,9 +44,15 @@
     &:hover,
     &:focus,
     &:active {
-      background-color: #000;
-      box-shadow: inset 0 0 0 2px #000, inset 0 0 0 3px $header-color;
+      color: $active-color;
+      text-decoration: none;
       outline: none;
+      box-shadow: 0 0 0 1px $active-color, 0 0 10px rgba($active-color, 0.3);
+    }
+
+    @include media-greater($on-laptop) {
+      margin-left: $spacing-unit / 2;
+      border-radius: 9em;
     }
 
     @include media-greater($on-laptop) {
@@ -136,14 +64,20 @@
     display: none;
   }
 
+  .trigger {
+    @extend %transition;
+  }
+
   @include media-query($on-laptop) {
     .menu-icon {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
       position: absolute;
-      top: -1px;
-      right: -1px;
-      padding: 20px 20px;
-      line-height: 1;
+      top: 0;
+      right: 0;
+      height: $header-height;
+      border-radius: 0;
 
       &:hover,
       &:focus,
@@ -153,110 +87,42 @@
       }
 
       span {
-        margin-top: 4px;
-        margin-bottom: 4px;
-        padding: 2px;
         width: 26px;
+        height: 4px;
         display: block;
         background-color: currentcolor;
-
-        &:nth-child(1) {
-          transform: skewX(-20deg) translateX(3px);
-        }
-
-        &:nth-child(2) {
-          transform: skewX(-20deg);
-        }
-
-        &:nth-child(3) {
-          transform: skewX(-20deg) translateX(-3px);
-        }
       }
     }
 
     .page-link {
-      margin: $spacing-unit / 4;
       padding: 0.25em $spacing-unit;
       display: block;
+      opacity: 0;
     }
 
     .trigger {
-      display: none;
       position: absolute;
-      top: 62px;
-      right: 16px;
+      top: $header-height;
+      right: 0;
       text-align: center;
-      border: 1px solid $aqua;
-      border-radius: 3px;
-      background-color: rgba(#000, 0.75);
-      backdrop-filter: blur(3px);
-
-      animation: menu-open 0.1s ease-in-out forwards;
+      background-color: white;
+      box-shadow: -5px 5px 10px -5px rgba(#000, 0.1);
       transform-origin: top right;
-
-      @-webkit-keyframes menu-open {
-        0% {
-          transform: scale(0.5);
-        }
-        100% {
-          transform: scale(1);
-        }
-      }
-
-      @keyframes menu-open {
-        0% {
-          -webkit-transform: scale(0.5);
-        }
-        100% {
-          -webkit-transform: scale(1);
-        }
-      }
-
-      > * {
-        animation: blink 0.15s ease-in-out forwards;
-      }
-
-      @for $i from 1 through 10 {
-        > :nth-child(#{$i}) {
-          animation-duration: 0.3s * $i;
-        }
-      }
-
-      @-webkit-keyframes blink {
-        0%,
-        25%,
-        60%,
-        75% {
-          opacity: 0;
-        }
-        12.5%,
-        50%,
-        70%,
-        100% {
-          opacity: 1;
-        }
-      }
-
-      @keyframes blink {
-        0%,
-        25%,
-        60%,
-        75% {
-          opacity: 0;
-        }
-        12.5%,
-        50%,
-        70%,
-        100% {
-          opacity: 1;
-        }
-      }
+      transform: scale(0);
+      opacity: 0;
     }
 
-    &:hover .trigger,
-    &:focus .trigger,
-    &:focus-within .trigger {
-      display: block;
+    &:hover,
+    &:focus,
+    &:focus-within {
+      .page-link {
+        opacity: 1;
+      }
+
+      .trigger {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
   }
 }

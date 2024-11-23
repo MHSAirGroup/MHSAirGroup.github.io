@@ -102,7 +102,7 @@ hr {
   height: 0;
   overflow: visible;
   border: none;
-  border-bottom: 1px solid $grey-color-light;
+  border-bottom: 1px solid $grey-300;
   margin: $spacing-unit auto;
 }
 
@@ -177,7 +177,8 @@ a {
   &:hover,
   &:focus,
   &:active {
-    box-shadow: 0 0 0 3px $background-color, 0 0 0 4px $brand-color;
+    color: $active-color;
+    text-decoration: underline;
     outline: none;
   }
 
@@ -238,8 +239,8 @@ template,
 }
 
 blockquote {
-  color: $grey-color;
-  border-left: 4px solid $grey-color-light;
+  color: $grey-500;
+  border-left: 4px solid $grey-300;
   padding-left: $spacing-unit / 2;
   font-style: italic;
 

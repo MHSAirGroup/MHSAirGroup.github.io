@@ -1,20 +1,29 @@
 .section {
-  padding-top: $header-height * 2;
-  padding-bottom: $header-height * 2;
+  padding-top: $spacing-unit;
+  padding-bottom: $spacing-unit;
 
   &-hero {
-    background: url('/assets/img/ar-condicionado-preto.png') no-repeat 110% #{$header-height + $spacing-unit};
-    background-size: 75% auto;
-    text-shadow: 0 0 15px rgba(#000, 0.5);
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      background: $blue-100;
+    }
+
+    background: url('/assets/img/ar-condicionado-preto.png') no-repeat 110% #{-$spacing-unit};
+    background-size: 70% auto;
 
     @include media-greater($on-laptop) {
-      background-position: 115% #{$header-height / 2};
-      background-size: 60% auto;
+      background-position-x: 115%;
+      background-size: 50% auto;
     }
 
     @include media-greater(1600px) {
       background-position-x: calc((100% - #{$content-width}) / 2 + #{$content-width * 0.9});
-      background-position-y: 0;
       background-size: auto 90%;
     }
 
@@ -26,22 +35,26 @@
       font-size: 2rem;
     }
 
-    &__description {}
-
     &__cta {
       margin-top: $spacing-unit * 2;
-      font-size: 1.5rem;
     }
   }
 
   &-servicos {
-    background-color: rgba($color: #ccc, $alpha: 0.3);
+    background-color: white;
+
+    &__item {
+      padding: $spacing-unit;
+      border: 1px solid $grey-300;
+      border-radius: 16px;
+    }
   }
 
   &-sobre-nos {
-    background-color: rgba($color: $aqua, $alpha: 0.3);
+    background-color: $grey-100;
   }
 
   &-contato {
+    background-color: white;
   }
 }

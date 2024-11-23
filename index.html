@@ -28,7 +28,7 @@ servicos:
     <p class="section-hero__headline">Especialistas em Ar Condicionado</p>
     <p class="section-hero__description">DAIKIN FUJITSU LG MIDEA SAMSUNG</p>
     <p class="section-hero__cta">
-      <a href="#contato" class="btn">Solicite uma visita técnica</a>
+      <a href="#contato" class="btn">Contato</a>
     </p>
   </div>
 </section>
@@ -38,7 +38,7 @@ servicos:
     <h2>Serviços</h2>
     <ul class="seamless auto-grid" style="--column-size: 300px">
       {%- for servico in page.servicos -%}
-      <li>
+      <li class="section-servicos__item">
         <span class="fs-3">{{ servico.title }}</span>
         <br />
         <span>{{ servico.headline }}</span>
@@ -110,71 +110,73 @@ servicos:
   <div class="wrapper">
     <h2>Fale conosco</h2>
 
-    <p>
-      <strong>Instagram:</strong>
-      <a href="https://instagram.com/{{site.instagram}}" target="_blank"
-        >@mhs.airgroup</a
-      >
-    </p>
-    <p>
-      <strong>WhatsApp:</strong>
-      <a href="https://wa.me/{{site.whatsapp.number}}" target="_blank"
-        >{{site.whatsapp.label}}</a
-      >
-    </p>
-    <p>
-      <strong>Telefone:</strong>
-      <a href="tel:+{{site.phone.number}}">{{site.phone.label}}</a>
-    </p>
+    <div class="horizontal">
+      <div class="flex">
+        <p>
+          <strong>Instagram:</strong>
+          <a href="https://instagram.com/{{site.instagram}}" target="_blank"
+            >@mhs.airgroup</a
+          >
+        </p>
+        <p>
+          <strong>WhatsApp:</strong>
+          <a href="https://wa.me/{{site.whatsapp.number}}" target="_blank"
+            >{{site.whatsapp.label}}</a
+          >
+        </p>
+        <p>
+          <strong>Telefone:</strong>
+          <a href="tel:+{{site.phone.number}}">{{site.phone.label}}</a>
+        </p>
+      </div>
 
-    <form action="" method="post">
-      <p>
-        <label for="nome">Nome</label>
-        <input
-          type="text"
-          name="nome"
-          placeholder="Informe seu nome"
-          required
-        />
-      </p>
-      <p>
-        <label for="email">E-mail</label>
-        <input
-          type="email"
-          name="email"
-          placeholder="seuemail@dominio.com"
-          required
-        />
-      </p>
-
-      <p>
-        <label for="assunto">Assunto</label>
-        <input
-          type="text"
-          name="assunto"
-          placeholder="Solicitação/orçamento/dúvida/etc"
-          required
-        />
-      </p>
-      <p>
-        <label for="mensagem">Mensagem</label>
-        <textarea
-          name="mensagem"
-          cols="30"
-          rows="5"
-          placeholder="Deixe sua mensagem..."
-        ></textarea>
-      </p>
-
-      <p class="honeypot">
-        <label for="honeypot"
-          >Se estiver vendo isto, deixe este campo vazio:
-        </label>
-        <input type="text" name="honeypot" />
-      </p>
-      <p>
-        <button type="submit">Enviar</button>
-      </p>
-    </form>
+      <form action="" method="post" class="flex">
+        <p>
+          <label for="nome">Nome</label>
+          <input
+            type="text"
+            name="nome"
+            placeholder="Informe seu nome"
+            required
+          />
+        </p>
+        <p>
+          <label for="email">E-mail</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="seuemail@dominio.com"
+            required
+          />
+        </p>
+        <p>
+          <label for="assunto">Assunto</label>
+          <input
+            type="text"
+            name="assunto"
+            placeholder="Solicitação/orçamento/dúvida/etc"
+            required
+          />
+        </p>
+        <p>
+          <label for="mensagem">Mensagem</label>
+          <textarea
+            name="mensagem"
+            cols="30"
+            rows="5"
+            placeholder="Deixe sua mensagem..."
+          ></textarea>
+        </p>
+        <p class="honeypot">
+          <label for="honeypot"
+            >Se estiver vendo isto, deixe este campo vazio:
+          </label>
+          <input type="text" name="honeypot" />
+        </p>
+        <p>
+          <button type="submit">Enviar</button>
+        </p>
+      </form>
+    </div>
   </div>
 </section>

@@ -69,10 +69,6 @@ a.icon {
   margin-right: 0.5em;
 }
 
-.btn {
-  @extend button;
-}
-
 .circ {
   overflow: hidden;
   border-radius: 9999px;

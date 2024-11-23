@@ -1,30 +1,64 @@
-$base-font-family : 'Jura', sans-serif;
-$base-font-size   : 16px;
-$base-font-weight : 400;
-$base-line-height : 1.5;
+$base-font-family: 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif,
+  'Apple Color Emoji', 'Segoe UI Emoji';
+$title-font-family: $base-font-family;
+$control-font-family: $base-font-family;
+$base-font-size: 16px;
+$small-font-size: $base-font-size * 0.875;
+$base-font-weight: 400;
+$base-line-height: 1.5;
 
-$title-font-family: 'Orbitron', sans-serif;
+$spacing-unit: 40px;
 
-$small-font-size  : $base-font-size * 0.875;
+$grey-100: #f5f5f5;
+$grey-200: #eeeeee;
+$grey-300: #e0e0e0;
+$grey-400: #bdbdbd;
+$grey-500: #9e9e9e;
+$grey-600: #757575;
+$grey-700: #616161;
+$grey-800: #424242;
+$grey-900: #212121;
 
-$spacing-unit     : 40px;
+$red-100: #ffebee;
+$red-200: #ffcdd2;
+$red-300: #ef9a9a;
+$red-400: #e57373;
+$red-500: #f44336;
+$red-600: #e53935;
+$red-700: #d32f2f;
+$red-800: #c62828;
+$red-900: #b71c1c;
 
-$grey-color-light : #ddd;
-$grey-color       : #888;
-$grey-color-dark  : #222;
+$blue-100: #e3f2fd;
+$blue-200: #bbdefb;
+$blue-300: #90caf9;
+$blue-400: #64b5f6;
+$blue-500: #2196f3;
+$blue-600: #1e88e5;
+$blue-700: #1976d2;
+$blue-800: #1565c0;
+$blue-900: #0d47a1;
 
-$aqua             : #01d7df;
-$amarelo          : #fff312;
+$green-100: #e8f5e9;
+$green-200: #c8e6c9;
+$green-300: #a5d6a7;
+$green-400: #81c784;
+$green-500: #4caf50;
+$green-600: #43a047;
+$green-700: #388e3c;
+$green-800: #2e7d32;
+$green-900: #1b5e20;
 
-$text-color       : $grey-color-light;
-$background-color : #000;
-$brand-color      : $amarelo;
+$brand-color: $blue-800;
+$active-color: $blue-500;
+$text-color: $grey-800;
+$background-color: white;
 
-$content-width    : 1200px;
+$content-width: 1200px;
 
-$on-palm          : 600px;
-$on-laptop        : 800px;
+$on-palm: 600px;
+$on-laptop: 800px;
 
 $header-height: 68px;
 $header-threshold: 22px;
-$header-color: $aqua;
+$header-color: $text-color;
