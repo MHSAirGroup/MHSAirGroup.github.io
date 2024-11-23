@@ -9,6 +9,17 @@ menu:
     url: '#sobre-nos'
   - label: Contato
     url: '#contato'
+servicos:
+  - title: "Instalação Residencial e Comercial"
+    headline: "Todas as capacidades."
+  - title: "Sistemas VRF e VRV"
+    headline: "Instalação completa e manutenção."
+  - title: "Chiller e Splitão"
+    headline: "Soluções industriais e comerciais."
+  - title: "Manutenção Preventiva e Corretiva"
+    headline: "Garantia de performance e longevidade."
+  - title: "Vendas de Ar Condicionado"
+    headline: "Multimarcas: Daikin, Fujitsu, LG, Midea, Samsung."
 ---
 
 <section class="section section-hero" id="hero">
@@ -16,34 +27,23 @@ menu:
     <h1 class="section-hero__title">MHS AIR GROUP</h1>
     <p class="section-hero__headline">Especialistas em Ar Condicionado</p>
     <p class="section-hero__description">DAIKIN FUJITSU LG MIDEA SAMSUNG</p>
-    <p class="section-hero__cta"><a href="#contato" class="btn">Contato</a></p>
+    <p class="section-hero__cta">
+      <a href="#contato" class="btn">Solicite uma visita técnica</a>
+    </p>
   </div>
 </section>
 
 <section class="section section-servicos" id="servicos">
   <div class="wrapper">
     <h2>Serviços</h2>
-    <ul>
+    <ul class="seamless auto-grid" style="--column-size: 300px">
+      {%- for servico in page.servicos -%}
       <li>
-        <strong>Instalação Residencial e Comercial</strong><br />Todas as
-        capacidades.
+        <span class="fs-3">{{ servico.title }}</span>
+        <br />
+        <span>{{ servico.headline }}</span>
       </li>
-      <li>
-        <strong>Sistemas VRF e VRV</strong><br />Instalação completa e
-        manutenção.
-      </li>
-      <li>
-        <strong>Chiller e Splitão</strong><br />Soluções industriais e
-        comerciais.
-      </li>
-      <li>
-        <strong>Manutenção Preventiva e Corretiva</strong><br />Garantia de
-        performance e longevidade.
-      </li>
-      <li>
-        <strong>Vendas de Ar Condicionado</strong><br />Multimarcas: Daikin,
-        Fujitsu, LG, Midea, Samsung.
-      </li>
+      {%- endfor -%}
     </ul>
   </div>
 </section>

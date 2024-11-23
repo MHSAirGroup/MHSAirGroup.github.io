@@ -3,6 +3,21 @@
   padding-bottom: $header-height * 2;
 
   &-hero {
+    background: url('/assets/img/ar-condicionado-preto.png') no-repeat 110% #{$header-height + $spacing-unit};
+    background-size: 75% auto;
+    text-shadow: 0 0 15px rgba(#000, 0.5);
+
+    @include media-greater($on-laptop) {
+      background-position: 115% #{$header-height / 2};
+      background-size: 60% auto;
+    }
+
+    @include media-greater(1600px) {
+      background-position-x: calc((100% - #{$content-width}) / 2 + #{$content-width * 0.9});
+      background-position-y: 0;
+      background-size: auto 90%;
+    }
+
     &__title {
       font-size: 3.4rem;
     }
