@@ -44,6 +44,8 @@
     border-radius: 0;
 
     &:not(.btn) {
+      color: black;
+
       &:hover,
       &:focus,
       &:active {
@@ -138,5 +140,22 @@
       margin: 0;
       list-style: none;
     }
+  }
+}
+
+.btn-whatsapp {
+  @extend .btn, .icon;
+  margin: 0;
+  padding: 0.5em;
+  background-color: $green-500;
+  color: white;
+  font-size: 36px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: white;
+    background-color: $green-600;
+    box-shadow: 0 0 15px $green-400;
   }
 }
