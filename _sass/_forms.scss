@@ -39,7 +39,7 @@ textarea,
 select {
   @extend %form-control;
   width: 100%;
-  border-color: $grey-500;
+  border-color: $gray-500;
 
   &:focus {
     border-color: $active-color;
@@ -86,19 +86,19 @@ button, .btn {
 }
 
 ::-webkit-input-placeholder {
-  color: $grey-500;
+  color: $gray-500;
   opacity: 1;
 }
 \:-moz-placeholder {
-  color: $grey-500;
+  color: $gray-500;
   opacity: 1;
 }
 ::-moz-placeholder {
-  color: $grey-500;
+  color: $gray-500;
   opacity: 1;
 }
 \:-ms-input-placeholder {
-  color: $grey-500;
+  color: $gray-500;
   opacity: 1;
 }
 \:focus::-webkit-input-placeholder {

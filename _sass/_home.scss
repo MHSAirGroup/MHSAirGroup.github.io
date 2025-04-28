@@ -11,20 +11,22 @@
       bottom: 0;
       left: 0;
       z-index: -1;
-      background: $blue-100;
+      background: linear-gradient(
+        to right bottom,
+        rgba($gray-100, 0) 25%,
+        rgba($gray-900, 0.5)
+      );
     }
 
-    background: url('/assets/img/ar-condicionado-preto.png') no-repeat 110% #{-$spacing-unit};
-    background-size: 70% auto;
+    background: url('/assets/img/ar-condicionado-preto.png') no-repeat 99% 90%;
+    background-size: 50% auto;
 
     @include media-greater($on-laptop) {
-      background-position-x: 115%;
-      background-size: 50% auto;
-    }
-
-    @include media-greater(1600px) {
-      background-position-x: calc((100% - #{$content-width}) / 2 + #{$content-width * 0.9});
-      background-size: auto 90%;
+      background-position: calc(
+          (100% - #{$content-width}) / 2 + #{$content-width * 0.75}
+        )
+        50%;
+      background-size: auto 80%;
     }
 
     &__title {
@@ -35,6 +37,25 @@
       font-size: 2rem;
     }
 
+    &__brands {
+      @extend .horizontal;
+      gap: $spacing-unit / 2;
+      justify-content: start;
+      flex-wrap: wrap;
+      max-width: $content-width * 0.25;
+
+      margin-top: $spacing-unit;
+      margin-bottom: $spacing-unit;
+
+      img {
+        height: 30px;
+      }
+
+      .daikin {
+        height: 20px;
+      }
+    }
+
     &__cta {
       margin-top: $spacing-unit * 2;
     }
@@ -43,15 +64,50 @@
   &-servicos {
     background-color: white;
 
+    &__grid {
+      @extend .horizontal;
+      gap: $spacing-unit / 2;
+      margin-top: $spacing-unit;
+      margin-bottom: $spacing-unit;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
     &__item {
-      padding: $spacing-unit;
-      border: 1px solid $grey-300;
+      @extend .vertical;
+      gap: $spacing-unit / 2;
+      align-items: center;
+      text-align: center;
+      width: clamp(300px, 30%, 400px);
+      padding: $spacing-unit / 2;
+      border: 1px solid $gray-300;
       border-radius: 16px;
     }
   }
 
   &-sobre-nos {
-    background-color: $grey-100;
+    background-color: $gray-100;
+  }
+  
+  &-clientes {
+    background-color: $gray-100;
+
+    &__grid {
+      @extend .horizontal;
+      gap: $spacing-unit;
+      justify-content: space-evenly;
+
+      margin-top: $spacing-unit;
+      margin-bottom: $spacing-unit;
+
+      @include media-query($on-laptop) {
+        flex-wrap: wrap;
+      }
+
+      img {
+        height: 80px;
+      }
+    }
   }
 
   &-contato {

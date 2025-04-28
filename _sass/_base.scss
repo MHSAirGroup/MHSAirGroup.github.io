@@ -102,7 +102,7 @@ hr {
   height: 0;
   overflow: visible;
   border: none;
-  border-bottom: 1px solid $grey-300;
+  border-bottom: 1px solid $gray-300;
   margin: $spacing-unit auto;
 }
 
@@ -143,6 +143,7 @@ h5,
 h6 {
   font-weight: $base-font-weight;
   line-height: 1.1;
+  color: black;
 }
 
 h1,
@@ -239,8 +240,8 @@ template,
 }
 
 blockquote {
-  color: $grey-500;
-  border-left: 4px solid $grey-300;
+  color: $gray-500;
+  border-left: 4px solid $gray-300;
   padding-left: $spacing-unit / 2;
   font-style: italic;
 

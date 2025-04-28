@@ -7,26 +7,102 @@ menu:
     url: '#servicos'
   - label: Sobre nós
     url: '#sobre-nos'
-  - label: Contato
+  - label: Solicitar Orçamento
     url: '#contato'
+    class: 'btn'
 servicos:
-  - title: "Instalação Residencial e Comercial"
-    headline: "Todas as capacidades."
-  - title: "Sistemas VRF e VRV"
-    headline: "Instalação completa e manutenção."
-  - title: "Chiller e Splitão"
-    headline: "Soluções industriais e comerciais."
-  - title: "Manutenção Preventiva e Corretiva"
-    headline: "Garantia de performance e longevidade."
-  - title: "Vendas de Ar Condicionado"
-    headline: "Multimarcas: Daikin, Fujitsu, LG, Midea, Samsung."
+  - title: 'Instalação Residencial e Comercial'
+    headline: 'Soluções completas para qualquer ambiente'
+    img:
+      src: '/assets/img/servicos/airconditioner.png'
+      alt: 'Instalação Residencial e Comercial'
+  - title: 'Sistemas VRF e VRV'
+    headline: 'Alta eficiência e controle inteligente'
+    img:
+      src: '/assets/img/servicos/vrf.png'
+      alt: 'Sistemas VRF e VRV'
+  - title: 'Chiller e Splitão Industrial'
+    headline: 'Projetos robustos para demandas complexas'
+    img:
+      src: '/assets/img/servicos/chiller.png'
+      alt: 'Chiller e Splitão Industrial'
+  - title: 'Manutenção Preventiva e Corretiva'
+    headline: 'Mais performance, menos preocupações'
+    img:
+      src: '/assets/img/servicos/gear.png'
+      alt: 'Manutenção Preventiva e Corretiva'
+  - title: 'Vendas de Ar Condicionado'
+    headline: 'Multimarcas: Daikin, Fujitsu, LG, Midea, Samsung'
+    img:
+      src: '/assets/img/servicos/coin.png'
+      alt: 'Vendas de Ar Condicionado'
+marcas:
+  - name: 'daikin'
+    img:
+      src: '/assets/img/marcas/daikin.svg'
+      alt: 'DAIKIN'
+  - name: 'fujitsu'
+    img:
+      src: '/assets/img/marcas/fujitsu.svg'
+      alt: 'FUJITSU'
+  - name: 'lg'
+    img:
+      src: '/assets/img/marcas/lg.svg'
+      alt: 'LG'
+  - name: 'midea'
+    img:
+      src: '/assets/img/marcas/midea.svg'
+      alt: 'MIDEA'
+  - name: 'samsung'
+    img:
+      src: '/assets/img/marcas/samsung.svg'
+      alt: 'SAMSUNG'
+clientes:
+  # - name: 'ids'
+  #   img:
+  #     src: ''
+  #     alt: 'IDS'
+  - name: 'jeep'
+    img:
+      src: '/assets/img/clientes/jeep.svg'
+      alt: 'JEEP'
+  - name: 'fiat'
+    img:
+      src: '/assets/img/clientes/fiat.svg'
+      alt: 'FIAT'
+  - name: 'american shoes'
+    img:
+      src: '/assets/img/clientes/american-shoes.png'
+      alt: 'AMERICAN SHOES'
+  - name: 'biolabor'
+    img:
+      src: '/assets/img/clientes/biolabor.png'
+      alt: 'BIOLABOR'
+  - name: 'kopenhagen'
+    img:
+      src: '/assets/img/clientes/kopenhagen.svg'
+      alt: 'KOPENHAGEN'
 ---
 
 <section class="section section-hero" id="hero">
   <div class="wrapper">
     <h1 class="section-hero__title">MHS AIR GROUP</h1>
-    <p class="section-hero__headline">Especialistas em Ar Condicionado</p>
-    <p class="section-hero__description">DAIKIN FUJITSU LG MIDEA SAMSUNG</p>
+    <p class="section-hero__headline">Projetos em Ar Condicionado</p>
+
+    <div class="section-hero__brands">
+      {%- for marca in page.marcas -%}
+      <div class="vertical center">
+        <img
+          src="{{ marca.img.src }}"
+          alt="{{ marca.img.alt }}"
+          class="{{ marca.name }}"
+          width="auto"
+          height="30"
+        />
+      </div>
+      {%- endfor -%}
+    </div>
+
     <p class="section-hero__cta">
       <a href="#contato" class="btn">Contato</a>
     </p>
@@ -36,11 +112,15 @@ servicos:
 <section class="section section-servicos" id="servicos">
   <div class="wrapper">
     <h2>Serviços</h2>
-    <ul class="seamless auto-grid" style="--column-size: 300px">
+    <ul class="seamless section-servicos__grid" style="--column-size: 300px">
       {%- for servico in page.servicos -%}
       <li class="section-servicos__item">
+        <img
+          src="{{ servico.img.src }}"
+          alt="{{ servico.img.alt }}"
+          class="section-servicos__item__img"
+        />
         <span class="fs-3">{{ servico.title }}</span>
-        <br />
         <span>{{ servico.headline }}</span>
       </li>
       {%- endfor -%}
@@ -49,7 +129,7 @@ servicos:
 </section>
 
 <section class="section section-sobre-nos" id="sobre-nos">
-  <div class="wrapper horizontal">
+  <div class="wrapper horizontal--desktop gap-2">
     <div>
       <h2>Propósito</h2>
       <p>
@@ -92,17 +172,25 @@ servicos:
       </ul>
     </div>
   </div>
+</section>
 
+<section class="section-clientes">
   <div class="wrapper">
     <h2>Principais Clientes</h2>
-    <ul class="horizontal">
-      <li>IDS</li>
-      <li>JEEP</li>
-      <li>FIAT</li>
-      <li>AMERICAN SHOES</li>
-      <li>BIOLABOR</li>
-      <li>KOPENHAGEN</li>
-    </ul>
+    <div class="section-clientes__grid">
+      {%- for cliente in page.clientes -%}
+      <div class="vertical center">
+        <img
+          src="{{ cliente.img.src }}"
+          alt="{{ cliente.img.alt }}"
+          class="{{ cliente.name }}"
+          width="auto"
+          height="80"
+        />
+        <p>{{ cliente.name | upcase }}</p>
+      </div>
+      {%- endfor -%}
+    </div>
   </div>
 </section>
 

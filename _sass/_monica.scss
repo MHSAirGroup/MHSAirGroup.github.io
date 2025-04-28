@@ -15,6 +15,26 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  &--laptop {
+    @extend .horizontal;
+    @include media-query($on-palm) {
+      flex-direction: column;
+    }
+  }
+
+  &--desktop {
+    @extend .horizontal;
+    @include media-query($on-laptop) {
+      flex-direction: column;
+    }
+  }
+}
+
+@for $i from 1 through 5 {
+  .gap-#{$i} {
+    gap: ($spacing-unit / 2) * $i;
+  }
 }
 
 .vertical {
