@@ -10,78 +10,6 @@ menu:
   - label: Solicitar Orçamento
     url: '#contato'
     class: 'btn'
-servicos:
-  - title: 'Instalação Residencial e Comercial'
-    headline: 'Soluções completas para qualquer ambiente'
-    img:
-      src: '/assets/img/servicos/airconditioner.png'
-      alt: 'Instalação Residencial e Comercial'
-  - title: 'Sistemas VRF e VRV'
-    headline: 'Alta eficiência e controle inteligente'
-    img:
-      src: '/assets/img/servicos/vrf.png'
-      alt: 'Sistemas VRF e VRV'
-  - title: 'Chiller e Splitão Industrial'
-    headline: 'Projetos robustos para demandas complexas'
-    img:
-      src: '/assets/img/servicos/chiller.png'
-      alt: 'Chiller e Splitão Industrial'
-  - title: 'Manutenção Preventiva e Corretiva'
-    headline: 'Mais performance, menos preocupações'
-    img:
-      src: '/assets/img/servicos/gear.png'
-      alt: 'Manutenção Preventiva e Corretiva'
-  - title: 'Vendas de Ar Condicionado'
-    headline: 'Multimarcas: Daikin, Fujitsu, LG, Midea, Samsung'
-    img:
-      src: '/assets/img/servicos/coin.png'
-      alt: 'Vendas de Ar Condicionado'
-marcas:
-  - name: 'daikin'
-    img:
-      src: '/assets/img/marcas/daikin.svg'
-      alt: 'DAIKIN'
-  - name: 'fujitsu'
-    img:
-      src: '/assets/img/marcas/fujitsu.svg'
-      alt: 'FUJITSU'
-  - name: 'lg'
-    img:
-      src: '/assets/img/marcas/lg.svg'
-      alt: 'LG'
-  - name: 'midea'
-    img:
-      src: '/assets/img/marcas/midea.svg'
-      alt: 'MIDEA'
-  - name: 'samsung'
-    img:
-      src: '/assets/img/marcas/samsung.svg'
-      alt: 'SAMSUNG'
-clientes:
-  # - name: 'ids'
-  #   img:
-  #     src: ''
-  #     alt: 'IDS'
-  - name: 'jeep'
-    img:
-      src: '/assets/img/clientes/jeep.svg'
-      alt: 'JEEP'
-  - name: 'fiat'
-    img:
-      src: '/assets/img/clientes/fiat.svg'
-      alt: 'FIAT'
-  - name: 'american shoes'
-    img:
-      src: '/assets/img/clientes/american-shoes.png'
-      alt: 'AMERICAN SHOES'
-  - name: 'biolabor'
-    img:
-      src: '/assets/img/clientes/biolabor.png'
-      alt: 'BIOLABOR'
-  - name: 'kopenhagen'
-    img:
-      src: '/assets/img/clientes/kopenhagen.svg'
-      alt: 'KOPENHAGEN'
 ---
 
 <section class="section section-hero" id="hero">
@@ -90,7 +18,7 @@ clientes:
     <p class="section-hero__headline">Projetos em Ar Condicionado</p>
 
     <div class="section-hero__brands">
-      {%- for marca in page.marcas -%}
+      {%- for marca in site.data.marcas -%}
       <div class="vertical center">
         <img
           src="{{ marca.img.src }}"
@@ -113,7 +41,7 @@ clientes:
   <div class="wrapper">
     <h2>Serviços</h2>
     <ul class="seamless section-servicos__grid" style="--column-size: 300px">
-      {%- for servico in page.servicos -%}
+      {%- for servico in site.data.servicos -%}
       <li class="section-servicos__item">
         <img
           src="{{ servico.img.src }}"
@@ -174,11 +102,11 @@ clientes:
   </div>
 </section>
 
-<section class="section-clientes">
+<section class="section section-clientes">
   <div class="wrapper">
     <h2>Principais Clientes</h2>
     <div class="section-clientes__grid">
-      {%- for cliente in page.clientes -%}
+      {%- for cliente in site.data.clientes -%}
       <div class="vertical center">
         <img
           src="{{ cliente.img.src }}"
@@ -187,7 +115,6 @@ clientes:
           width="auto"
           height="80"
         />
-        <p>{{ cliente.name | upcase }}</p>
       </div>
       {%- endfor -%}
     </div>

@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Instalação Residencial e Comercial",
+    "headline": "Soluções completas para qualquer ambiente",
+    "img": {
+      "src": "/assets/img/servicos/airconditioner.png",
+      "alt": "Instalação Residencial e Comercial"
+    }
+  },
+  {
+    "title": "Sistemas VRF e VRV",
+    "headline": "Alta eficiência e controle inteligente",
+    "img": {
+      "src": "/assets/img/servicos/vrf.png",
+      "alt": "Sistemas VRF e VRV"
+    }
+  },
+  {
+    "title": "Chiller e Splitão Industrial",
+    "headline": "Projetos robustos para demandas complexas",
+    "img": {
+      "src": "/assets/img/servicos/chiller.png",
+      "alt": "Chiller e Splitão Industrial"
+    }
+  },
+  {
+    "title": "Manutenção Preventiva e Corretiva",
+    "headline": "Mais performance, menos preocupações",
+    "img": {
+      "src": "/assets/img/servicos/gear.png",
+      "alt": "Manutenção Preventiva e Corretiva"
+    }
+  },
+  {
+    "title": "Vendas de Ar Condicionado",
+    "headline": "Multimarcas: Daikin, Fujitsu, LG, Midea, Samsung",
+    "img": {
+      "src": "/assets/img/servicos/coin.png",
+      "alt": "Vendas de Ar Condicionado"
+    }
+  }
+]

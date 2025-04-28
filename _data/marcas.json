@@ -1,0 +1,19 @@
+[
+  {
+    "name": "daikin",
+    "img": { "src": "/assets/img/marcas/daikin.svg", "alt": "DAIKIN" }
+  },
+  {
+    "name": "fujitsu",
+    "img": { "src": "/assets/img/marcas/fujitsu.svg", "alt": "FUJITSU" }
+  },
+  { "name": "lg", "img": { "src": "/assets/img/marcas/lg.svg", "alt": "LG" } },
+  {
+    "name": "midea",
+    "img": { "src": "/assets/img/marcas/midea.svg", "alt": "MIDEA" }
+  },
+  {
+    "name": "samsung",
+    "img": { "src": "/assets/img/marcas/samsung.svg", "alt": "SAMSUNG" }
+  }
+]

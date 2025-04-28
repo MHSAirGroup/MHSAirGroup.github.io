@@ -1,0 +1,25 @@
+[
+  {
+    "name": "ids",
+    "img": { "src": "/assets/img/clientes/ids.png", "alt": "IDS" }
+  },
+  {
+    "name": "jeep",
+    "img": { "src": "/assets/img/clientes/jeep.svg", "alt": "JEEP" }
+  },
+  {
+    "name": "fiat",
+    "img": { "src": "/assets/img/clientes/fiat.svg", "alt": "FIAT" }
+  },
+  {
+    "name": "american shoes",
+    "img": {
+      "src": "/assets/img/clientes/american-shoes.png",
+      "alt": "AMERICAN SHOES"
+    }
+  },
+  {
+    "name": "kopenhagen",
+    "img": { "src": "/assets/img/clientes/kopenhagen.svg", "alt": "KOPENHAGEN" }
+  }
+]
