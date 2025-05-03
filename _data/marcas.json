@@ -1,5 +1,9 @@
 [
   {
+    "name": "carrier",
+    "img": { "src": "/assets/img/marcas/carrier.svg", "alt": "CARRIER" }
+  },
+  {
     "name": "daikin",
     "img": { "src": "/assets/img/marcas/daikin.svg", "alt": "DAIKIN" }
   },
