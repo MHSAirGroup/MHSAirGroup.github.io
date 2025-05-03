@@ -2,7 +2,14 @@
   padding-top: $spacing-unit;
   padding-bottom: $spacing-unit;
 
+  @include media-greater($on-laptop) {
+    padding-top: $spacing-unit * 4;
+    padding-bottom: $spacing-unit * 4;
+  }
+
   &-hero {
+    @extend .section;
+
     &::before {
       content: '';
       position: absolute;
@@ -11,19 +18,16 @@
       bottom: 0;
       left: 0;
       z-index: -1;
-      background: linear-gradient(
-        to right bottom,
-        rgba($gray-100, 0) 25%,
-        rgba($gray-900, 0.5)
-      );
+      background: linear-gradient(to right bottom, transparent 50%, $gray-600);
     }
 
-    background: url('/assets/img/ar-condicionado-preto.png') no-repeat 99% 90%;
-    background-size: 50% auto;
+    position: relative;
+    background: url('/assets/img/ar-condicionado-preto.png') no-repeat 90% 90%;
+    background-size: 40% auto;
 
     @include media-greater($on-laptop) {
       background-position: 450px 50%;
-      background-size: auto 60%;
+      background-size: auto 360px;
     }
 
     @include media-greater($content-width) {
@@ -31,15 +35,18 @@
           (100% - #{$content-width}) / 2 + #{$content-width * 0.75}
         )
         50%;
-      background-size: auto 80%;
     }
 
     &__title {
-      font-size: 3.4rem;
+      @include media-greater($on-palm) {
+        font-size: 3.4rem;
+      }
     }
 
     &__headline {
-      font-size: 2rem;
+      @include media-greater($on-palm) {
+        font-size: 2rem;
+      }
     }
 
     &__brands {
@@ -54,6 +61,11 @@
 
       img {
         height: 30px;
+        opacity: 0.5;
+
+        &:hover {
+          opacity: 1;
+        }
       }
 
       .daikin {
@@ -67,15 +79,35 @@
   }
 
   &-servicos {
-    background-color: white;
+    @extend .section;
+    background: radial-gradient(
+      $gray-300 0%,
+      transparent 70%
+    );
+
+    &__header {
+      @extend .wrapper;
+    }
 
     &__grid {
-      @extend .horizontal;
+      @extend .wrapper--lg, .horizontal;
       gap: $spacing-unit / 2;
       margin-top: $spacing-unit;
       margin-bottom: $spacing-unit;
       justify-content: center;
       flex-wrap: wrap;
+
+      @include media-greater($on-laptop) {
+        gap: $spacing-unit;
+      }
+    }
+
+    &__item,
+    &__img,
+    &__title,
+    &__headline {
+      transition: .3s ease-in-out;
+      transform: scale(1);
     }
 
     &__item {
@@ -85,17 +117,52 @@
       text-align: center;
       width: clamp(300px, 30%, 400px);
       padding: $spacing-unit / 2;
+      background-color: $background-color;
       border: 1px solid $gray-300;
       border-radius: 16px;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba($gray-900, 0.2);
+
+        .section-servicos__img {
+          opacity: 1;
+        }
+        .section-servicos__title {
+          color: $gray-900;
+        }
+        .section-servicos__headline {
+          color: $gray-900;
+        }
+      }
+    }
+
+    &__img {
+      opacity: 0.5;
+    }
+
+    &__title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.2;
+      color: $gray-800;
+    }
+
+    &__headline {
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 1.2;
+      color: $gray-600;
     }
   }
 
   &-sobre-nos {
-    background-color: $gray-100;
+    @extend .section;
   }
-  
+
   &-clientes {
-    background-color: $gray-100;
+    @extend .page-content;
+    background-color: $gray-300;
 
     &__grid {
       @extend .horizontal;
@@ -113,9 +180,5 @@
         height: 80px;
       }
     }
-  }
-
-  &-contato {
-    background-color: white;
   }
 }

@@ -1,5 +1,6 @@
 .page-content {
-  padding: $spacing-unit 0;
+  padding-top: $spacing-unit;
+  padding-bottom: $spacing-unit;
 }
 
 .page-heading {
@@ -12,6 +13,26 @@
   margin-left: auto;
   padding-right: $spacing-unit;
   padding-left: $spacing-unit;
+
+  &--xs {
+    @extend .wrapper;
+    max-width: $on-palm;
+  }
+
+  &--sm {
+    @extend .wrapper;
+    max-width: $on-laptop;
+  }
+
+  &--lg {
+    @extend .wrapper;
+    max-width: $content-width-lg;
+  }
+
+  &--xl {
+    @extend .wrapper;
+    max-width: $content-width-xl;
+  }
 
   @include media-query($on-laptop) {
     padding-right: $spacing-unit / 2;
@@ -67,84 +88,4 @@
 .circ {
   overflow: hidden;
   border-radius: 9999px;
-}
-
-.card {
-  display: inline-block;
-  background: $background-color;
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 0 5px 25px 0 rgba(#000, 0.2);
-
-  > * {
-    padding: $spacing-unit / 2;
-
-    @include media-query($on-palm) {
-      padding: $spacing-unit / 4;
-    }
-  }
-}
-
-.absolute {
-  position: absolute;
-}
-.fixed {
-  position: fixed;
-}
-.relative {
-  position: relative;
-}
-.sticky {
-  position: sticky;
-}
-
-.top {
-  top: 0;
-}
-.left {
-  left: 0;
-}
-.right {
-  right: 0;
-}
-.bottom {
-  bottom: 0;
-}
-
-.m-0 {
-  margin: 0;
-}
-.m-1 {
-  margin: $spacing-unit / 2;
-}
-.m-2 {
-  margin: $spacing-unit;
-}
-.m-3 {
-  margin: $spacing-unit * 1.5;
-}
-.m-4 {
-  margin: $spacing-unit * 2;
-}
-.m-5 {
-  margin: $spacing-unit * 2.5;
-}
-
-.p-0 {
-  padding: 0;
-}
-.p-1 {
-  padding: $spacing-unit / 2;
-}
-.p-2 {
-  padding: $spacing-unit;
-}
-.p-3 {
-  padding: $spacing-unit * 1.5;
-}
-.p-4 {
-  padding: $spacing-unit * 2;
-}
-.p-5 {
-  padding: $spacing-unit * 2.5;
 }

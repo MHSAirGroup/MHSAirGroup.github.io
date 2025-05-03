@@ -1,0 +1,15 @@
+.widget {
+  &-container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+  }
+
+  &-wrapper {
+    @extend .wrapper--xl, .vertical;
+    align-items: flex-end;
+    margin-bottom: $spacing-unit / 2;
+  }
+}

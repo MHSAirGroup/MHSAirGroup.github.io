@@ -1,0 +1,14 @@
+.card {
+  background: $background-color;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 5px 25px 0 rgba(#000, 0.2);
+
+  > * {
+    padding: $spacing-unit / 2;
+
+    @include media-query($on-palm) {
+      padding: $spacing-unit / 4;
+    }
+  }
+}

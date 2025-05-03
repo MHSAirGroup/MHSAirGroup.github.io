@@ -1,0 +1,28 @@
+.icon-button {
+  @extend .btn, .icon;
+  margin: 0;
+  padding: 0.5em;
+  font-size: 36px;
+  color: white;
+  background-color: $blue-500;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: white;
+    background-color: $blue-800;
+    box-shadow: 0 0 15px $blue-800;
+  }
+
+  &--whatsapp {
+    @extend .icon-button;
+    background-color: $green-500;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $green-700;
+      box-shadow: 0 0 15px $green-700;
+    }
+  }
+}

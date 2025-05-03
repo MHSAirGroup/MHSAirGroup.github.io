@@ -12,7 +12,7 @@ menu:
     class: 'btn'
 ---
 
-<section class="section section-hero" id="hero">
+<section class="section-hero" id="hero">
   <div class="wrapper">
     <h1 class="section-hero__title">MHS AIR GROUP</h1>
     <p class="section-hero__headline">Projetos em Ar Condicionado</p>
@@ -37,86 +37,88 @@ menu:
   </div>
 </section>
 
-<section class="section section-servicos" id="servicos">
-  <div class="wrapper">
-    <h2>Serviços</h2>
+<section class="section-servicos" id="servicos">
+    <header class="section-servicos__header">
+      <h2>Serviços</h2>
+    </header>
     <ul class="seamless section-servicos__grid" style="--column-size: 300px">
       {%- for servico in site.data.servicos -%}
       <li class="section-servicos__item">
         <img
           src="{{ servico.img.src }}"
           alt="{{ servico.img.alt }}"
-          class="section-servicos__item__img"
+          class="section-servicos__img"
         />
-        <span class="fs-3">{{ servico.title }}</span>
-        <span>{{ servico.headline }}</span>
+        <span class="section-servicos__title">{{ servico.title }}</span>
+        <span class="section-servicos__headline">{{ servico.headline }}</span>
       </li>
       {%- endfor -%}
     </ul>
-  </div>
 </section>
 
-<section class="section section-sobre-nos" id="sobre-nos">
-  <div class="wrapper horizontal--desktop gap-2">
-    <div>
-      <h2>Propósito</h2>
-      <p>
-        Proporcionar qualidade de vida através da refrigeração, trazendo
-        conforto para todos.
-      </p>
-      <h2>Visão</h2>
-      <p>
-        Ser a empresa mais influente em serviços de ar condicionado no Brasil.
-      </p>
-      <h2>Valores</h2>
-      <ul>
-        <li>Caráter acima de capacitação</li>
-        <li>Crescimento e evolução em conjunto</li>
-        <li>Compromisso e honestidade</li>
-        <li>Qualidade junto à ética</li>
-        <li>Ser bom para nós quando for bom para o cliente</li>
-      </ul>
-    </div>
-
-    <div>
-      <h2>Por Que Escolher a MHS?</h2>
-      <ul>
-        <li>
-          <strong>Experiência e Expertise</strong><br />Anos de atuação no
-          mercado.
-        </li>
-        <li>
-          <strong>Equipe Qualificada</strong><br />Profissionais treinados e
-          certificados.
-        </li>
-        <li>
-          <strong>Compromisso com a Qualidade</strong><br />Foco em excelência e
-          satisfação do cliente.
-        </li>
-        <li>
-          <strong>Atendimento Personalizado</strong><br />Soluções sob medida
-          para cada necessidade.
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="section section-clientes">
-  <div class="wrapper">
-    <h2>Principais Clientes</h2>
-    <div class="section-clientes__grid">
-      {%- for cliente in site.data.clientes -%}
-      <div class="vertical center">
-        <img
-          src="{{ cliente.img.src }}"
-          alt="{{ cliente.img.alt }}"
-          class="{{ cliente.name }}"
-          width="auto"
-          height="80"
-        />
+<div class="section-sobre">
+  <section class="section-sobre-nos" id="sobre-nos">
+    <div class="wrapper horizontal--desktop gap-2">
+      <div>
+        <h2>Propósito</h2>
+        <p>
+          Proporcionar qualidade de vida através da refrigeração, trazendo
+          conforto para todos.
+        </p>
+        <h2>Visão</h2>
+        <p>
+          Ser a empresa mais influente em serviços de ar condicionado no Brasil.
+        </p>
+        <h2>Valores</h2>
+        <ul>
+          <li>Caráter acima de capacitação</li>
+          <li>Crescimento e evolução em conjunto</li>
+          <li>Compromisso e honestidade</li>
+          <li>Qualidade junto à ética</li>
+          <li>Ser bom para nós quando for bom para o cliente</li>
+        </ul>
       </div>
-      {%- endfor -%}
+  
+      <div>
+        <h2>Por Que Escolher a MHS?</h2>
+        <ul>
+          <li>
+            <strong>Experiência e Expertise</strong><br />Anos de atuação no
+            mercado.
+          </li>
+          <li>
+            <strong>Equipe Qualificada</strong><br />Profissionais treinados e
+            certificados.
+          </li>
+          <li>
+            <strong>Compromisso com a Qualidade</strong><br />Foco em excelência e
+            satisfação do cliente.
+          </li>
+          <li>
+            <strong>Atendimento Personalizado</strong><br />Soluções sob medida
+            para cada necessidade.
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+  
+  <section class="section-clientes">
+    <div class="wrapper">
+      <h2>Principais Clientes</h2>
+      <div class="section-clientes__grid">
+        {%- for cliente in site.data.clientes -%}
+        <div class="vertical center">
+          <img
+            src="{{ cliente.img.src }}"
+            alt="{{ cliente.img.alt }}"
+            class="{{ cliente.name }}"
+            width="auto"
+            height="80"
+          />
+        </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+</div>

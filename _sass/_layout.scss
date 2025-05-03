@@ -1,5 +1,15 @@
 .site-header {
   height: $header-height;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: linear-gradient(
+    to bottom,
+    $background-color,
+    transparent
+  )
 }
 
 .site-title {
@@ -130,32 +140,80 @@
 }
 
 .site-footer {
-  padding-top: $spacing-unit;
-  padding-bottom: $spacing-unit;
+  padding-top: $spacing-unit * 4;
+  padding-bottom: $spacing-unit * 4;
+  background: radial-gradient(circle at 50% 0, $gray-300 0%, transparent 70%);
 
-  .footer-heading {
-    font-size: 1.2em;
-
-    ul {
-      margin: 0;
-      list-style: none;
+  .site-title {
+    &__icon {
+      svg {
+        width: auto;
+        height: 70px;
+      }
     }
+
+    &__text {
+      max-width: 3em;
+    }
+  }
+
+  &__wrapper {
+    @extend .wrapper, .horizontal;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-unit / 2;
+    flex-wrap: wrap;
+  }
+
+  &__social {
+    @extend .seamless;
+
+    &-item {
+      margin-bottom: 0.25em;
+      font-size: $small-font-size;
+
+      a {
+        display: inline-flex;
+        justify-content: start;
+        align-items: center;
+        gap: 0.5em;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  &__payments {
+    @extend .horizontal;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: $spacing-unit;
   }
 }
 
-.btn-whatsapp {
-  @extend .btn, .icon;
-  margin: 0;
-  padding: 0.5em;
-  background-color: $green-500;
-  color: white;
-  font-size: 36px;
+.map {
+  &-container {
+    @extend .page-content;
 
-  &:hover,
-  &:focus,
-  &:active {
-    color: white;
-    background-color: $green-600;
-    box-shadow: 0 0 15px $green-400;
+    &__wrapper {
+      @extend .wrapper--lg;
+    }
+  }
+
+  &-address {
+    @extend .horizontal, .center;
+    gap: 0.5em;
+    text-align: center;
+    margin-top: $spacing-unit;
+    margin-bottom: 0;
+  }
+}
+
+.contato-container {
+  @extend .page-content;
+  background-color: $gray-100;
+
+  @include media-greater($on-laptop) {
+    padding-top: $spacing-unit * 4;
+    padding-bottom: $spacing-unit * 4;
   }
 }

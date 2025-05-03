@@ -1,0 +1,22 @@
+[
+  {
+    "name": "visa",
+    "img": { "src": "/assets/img/pagamentos/visa.png", "alt": "VISA" }
+  },
+  {
+    "name": "mastercard",
+    "img": { "src": "/assets/img/pagamentos/mastercard.png", "alt": "MASTERCARD" }
+  },
+  {
+    "name": "american-express",
+    "img": { "src": "/assets/img/pagamentos/american-express.png", "alt": "AMERICAN EXPRESS" }
+  },
+  {
+    "name": "pix",
+    "img": { "src": "/assets/img/pagamentos/pix.svg", "alt": "PIX" }
+  },
+  {
+    "name": "boleto",
+    "img": { "src": "/assets/img/pagamentos/boleto.svg", "alt": "BOLETO" }
+  }
+]

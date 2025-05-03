@@ -1,86 +1,62 @@
-
-<section class="section section-contato" id="contato">
-  <div class="wrapper">
-    <h2>Fale conosco</h2>
-
-    <div class="horizontal">
-      <div class="flex">
-        <p>
-          <strong>Instagram:</strong>
-          <a href="https://instagram.com/{{site.instagram}}" target="_blank"
-            >@mhs.airgroup</a
-          >
-        </p>
-        <p>
-          <strong>WhatsApp:</strong>
-          <a href="https://wa.me/{{site.whatsapp.number}}" target="_blank"
-            >{{site.whatsapp.label}}</a
-          >
-        </p>
-        <p>
-          <strong>Telefone:</strong>
-          <a href="tel:+{{site.phone.number}}">{{site.phone.label}}</a>
-        </p>
-      </div>
-
-      <form action="" method="post" class="flex">
-        <p>
-          <label for="nome">Nome</label>
-          <input
-            type="text"
-            name="nome"
-            placeholder="Informe seu nome"
-            required
-          />
-        </p>
-        <p>
-          <label for="email">E-mail</label>
-          <input
-            type="email"
-            name="email"
-            placeholder="seuemail@dominio.com"
-            required
-          />
-        </p>
-        <p>
-          <label for="assunto">Assunto</label>
-          <input
-            type="text"
-            name="assunto"
-            placeholder="Solicitação/orçamento/dúvida/etc"
-            required
-          />
-        </p>
-        <p>
-          <label for="mensagem">Mensagem</label>
-          <textarea
-            name="mensagem"
-            cols="30"
-            rows="5"
-            placeholder="Deixe sua mensagem..."
-          ></textarea>
-        </p>
-        <p class="honeypot">
-          <label for="honeypot"
-            >Se estiver vendo isto, deixe este campo vazio:
-          </label>
-          <input type="text" name="honeypot" />
-        </p>
-        <p>
-          <button type="submit">Enviar</button>
-        </p>
-      </form>
-    </div>
-  </div>
-</section>
-
 <footer class="site-footer">
-  <div class="wrapper">
+  <div class="site-footer__wrapper">
+    <div class="site-title">
+      <span class="site-title__icon"> {%- include svg/logo.svg -%} </span>
+      <span class="site-title__text"> {{ site.title }} </span>
+    </div>
+
+    <ul class="site-footer__social flex">
+      <li class="site-footer__social-item">
+        <a
+          href="https://instagram.com/{{site.instagram}}"
+          target="_blank"
+          class="icon"
+        >
+          {%- include svg/instagram.svg -%}
+          <span> {{ site.instagram }} </span>
+        </a>
+      </li>
+      <li class="site-footer__social-item">
+        <a href="tel:+{{site.phone.number}}" class="icon" target="_blank">
+          {%- include svg/phone.svg -%}
+          <span> {{ site.phone.label }} </span>
+        </a>
+      </li>
+      <li class="site-footer__social-item">
+        <a
+          href="https://wa.me/{{site.whatsapp.number}}"
+          class="icon"
+          target="_blank"
+        >
+          {%- include svg/whatsapp.svg -%}
+          <span> {{ site.whatsapp.label }} </span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="site-footer__payments">
+      {%- for item in site.data.payments -%}
+      <div class="site-footer__payments-item">
+        <img
+          src="{{ item.img.src }}"
+          alt="{{ item.img.alt }}"
+          class="site-footer__payments-image {{ item.name }}"
+          height="36"
+        />
+      </div>
+      {%- endfor -%}
+    </div>
   </div>
 </footer>
 
-<div class="fixed right bottom m-1">
-  <a href="https://wa.me/{{site.whatsapp.number}}" class="btn-whatsapp" target="_blank">
-    {%- include svg/whatsapp.svg -%}
-  </a>
+<div class="widget-container">
+  <div class="widget-wrapper">
+    <a
+      href="https://wa.me/{{site.whatsapp.number}}"
+      class="icon-button--whatsapp"
+      target="_blank"
+    >
+      {%- include svg/whatsapp.svg -%}
+    </a>
+  </div>
 </div>
