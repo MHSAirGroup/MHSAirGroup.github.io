@@ -26,6 +26,7 @@ url: "http://mhsar.com.br" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
+permalink: pretty/
 
 sass:
   style: compressed
