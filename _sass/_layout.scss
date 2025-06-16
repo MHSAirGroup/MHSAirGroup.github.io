@@ -190,6 +190,16 @@
   }
 }
 
+.msg, .page, .post {
+  padding-top: $spacing-unit * 2;
+  padding-bottom: $spacing-unit * 2;
+
+  @include media-greater($on-laptop) {
+    padding-top: $spacing-unit * 4;
+    padding-bottom: $spacing-unit * 4;
+  }
+}
+
 .map {
   &-container {
     @extend .page-content;

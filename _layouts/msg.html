@@ -1,17 +1,20 @@
 ---
 layout: default
 ---
+<article class="wrapper msg">
 
-<div class="wrapper msg">
   <header class="msg__header">
     <h1 class="msg__title">{{ page.title }}</h1>
   </header>
 
   <div class="msg__content">
     <p>{{ page.excerpt }}</p>
+
     {{ content }}
+
     <p>
       <a href="javascript: history.back();">Voltar</a>
     </p>
   </div>
-</div>
+  
+</article>
